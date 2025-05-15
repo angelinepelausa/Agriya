@@ -42,11 +42,33 @@ const ProfileScreen = () => {
   const handleStartSelling = () => {
     navigation.navigate('ShopScreen');
   };
+  
+
+  const handleSettings = () => {
+    navigation.navigate('Settings')
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.topRectangle} />
-
+      <View style={styles.topRightIcons}>
+        <TouchableOpacity style={styles.settingsIcon} onPress={handleSettings}>
+        <Image 
+        source={require('../assets/Settings.png')}
+        style={styles.topIcon}
+        resizeMode='contain'
+        />
+        </TouchableOpacity>
+      <View style={styles.topRightIcons}>
+        <TouchableOpacity style={styles.cartIcon} onPress={() => navigation.navigate('Cart')}>
+          <Image
+          source={require('../assets/Cart.png')}
+          style={styles.topIcon}
+          resizeMode='contain'
+          />
+        </TouchableOpacity>
+        </View>
+      </View>
       <TouchableOpacity style={styles.button} onPress={handleStartSelling}>
         <View style={styles.buttonContent}>
           <Image
@@ -74,27 +96,29 @@ const ProfileScreen = () => {
           <Text style={styles.sectionText}>My Purchases</Text>
 
           <View style={styles.imagesRow}>
-            <View style={styles.imageContainer}>
+            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ToPay')}>
               <Image
                 source={require('../assets/Pay.png')}
-                style={styles.purchaseImage}
+                style={styles.navImage}
               />
-              <Text style={styles.imageLabel}>To pay</Text>
-            </View>
-            <View style={styles.imageContainer}>
+              <Text style={styles.navText}>To Pay</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ToShipScreen')}>
               <Image
                 source={require('../assets/Ship.png')}
-                style={styles.purchaseImage}
+                style={styles.navImage}
               />
-              <Text style={styles.imageLabel}>To ship</Text>
-            </View>
-            <View style={styles.imageContainer}>
+              <Text style={styles.navText}>To Ship</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ToReceive')}>
               <Image
                 source={require('../assets/Receive.png')}
-                style={styles.purchaseImage}
+                style={styles.navImage}
               />
-              <Text style={styles.imageLabel}>To receive</Text>
-            </View>
+              <Text style={styles.navText}>To Receive</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -102,11 +126,11 @@ const ProfileScreen = () => {
           <Text style={styles.sectionText}>Other Activities</Text>
 
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.activityButton}>
+            <TouchableOpacity style={styles.activityButton} onPress={() => navigation.navigate('RecentlyViewed')}>
               <Text style={styles.activityButtonText}>Recently Viewed</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.activityButton}>
+            <TouchableOpacity style={styles.activityButton} onPress={() => navigation.navigate('BuyAgain')}>
               <Text style={styles.activityButtonText}>Buy Again</Text>
             </TouchableOpacity>
           </View>
@@ -114,7 +138,7 @@ const ProfileScreen = () => {
       </View>
 
       <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Home')}>
           <Image
             source={require('../assets/Home.png')}
             style={styles.navImage}
@@ -122,20 +146,12 @@ const ProfileScreen = () => {
           <Text style={styles.navText}>Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Marketplace')}>
           <Image
             source={require('../assets/Marketplace.png')}
             style={styles.navImage}
           />
           <Text style={styles.navText}>Marketplace</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.navItem}>
-          <Image
-            source={require('../assets/Orders.png')}
-            style={styles.navImage}
-          />
-          <Text style={styles.navText}>Orders</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.navItem}>
@@ -159,6 +175,30 @@ const styles = StyleSheet.create({
     width: '100%',
     height: height * 0.15,
     backgroundColor: '#11AB2F',
+    justifyContent: 'flex-end', 
+    alignItems: 'flex-end',
+    paddingRight: 15,
+    paddingBottom: 10,
+  },
+  topRightIcons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    marginRight: 10,
+  },
+  settingsIcon: {
+    padding: 5, 
+    marginLeft: 5,
+    
+  },
+  cartIcon: {
+    padding: 5, 
+    marginLeft: 1,
+  },
+  topIcon: {
+    width: 30, 
+    height: 30,
+    bottom: 75,
   },
   button: {
     position: 'absolute',
