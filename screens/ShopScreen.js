@@ -73,9 +73,17 @@ const ShopScreen = () => {
         <View style={styles.orderSection}>
           <Text style={styles.sectionText}>Order Status</Text>
           <View style={styles.orderBoxesContainer}>
-            <View style={styles.orderBox}><Text style={styles.orderBoxText}>To Ship</Text></View>
-            <View style={styles.orderBox}><Text style={styles.orderBoxText}>Cancelled</Text></View>
-            <View style={styles.orderBox}><Text style={styles.orderBoxText}>Completed</Text></View>
+            <TouchableOpacity style={styles.orderBox} onPress={() => navigation.navigate('SellerShip')}>
+              <Text style={styles.orderBoxText}>To Ship</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.orderBox} onPress={() => navigation.navigate('SellerCancelled')}>
+              <Text style={styles.orderBoxText}>Cancelled</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.orderBox} onPress={() => navigation.navigate('SellerCompleted')}>
+              <Text style={styles.orderBoxText}>Completed</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -83,22 +91,22 @@ const ShopScreen = () => {
           <Text style={styles.sectionText}>My Products</Text>
 
           <View style={styles.productGrid}>
-            <TouchableOpacity style={styles.productItem}>
+            <TouchableOpacity style={styles.productItem} onPress={() => navigation.navigate ('MyProductsFruitsandVegetables')}>
               <Image source={require('../assets/FruitsandVegetables.png')} style={styles.productImage} />
               <Text style={styles.productLabel}>Fruits & Vegetables</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.productItem}>
+            <TouchableOpacity style={styles.productItem} onPress={() => navigation.navigate ('MyProductsDairy')}>
               <Image source={require('../assets/Dairy.png')} style={styles.productImage} />
               <Text style={styles.productLabel}>Dairy</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.productGrid}>
-            <TouchableOpacity style={styles.productItem}>
+            <TouchableOpacity style={styles.productItem} onPress={() => navigation.navigate ('MyProductsGrains')}>
               <Image source={require('../assets/Grains.png')} style={styles.productImage} />
               <Text style={styles.productLabel}>Grains</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.productItem}>
+            <TouchableOpacity style={styles.productItem} onPress={() => navigation.navigate ('MyProductsMeatandPoultry')}>
               <Image source={require('../assets/MeatandPoultry.png')} style={styles.productImage} />
               <Text style={styles.productLabel}>Meat & Poultry</Text>
             </TouchableOpacity>
@@ -118,19 +126,14 @@ const ShopScreen = () => {
       </View>
 
       <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Home')} >
           <Image source={require('../assets/Home.png')} style={styles.navImage} />
           <Text style={styles.navText}>Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Marketplace')}>
           <Image source={require('../assets/Marketplace.png')} style={styles.navImage} />
           <Text style={styles.navText}>Marketplace</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.navItem}>
-          <Image source={require('../assets/Orders.png')} style={styles.navImage} />
-          <Text style={styles.navText}>Orders</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.navItem}>

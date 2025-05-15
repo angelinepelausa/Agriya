@@ -16,6 +16,7 @@ import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 import firestore from '@react-native-firebase/firestore';
 import { launchImageLibrary } from 'react-native-image-picker';
+import auth from '@react-native-firebase/auth';
 
 const { height } = Dimensions.get('window');
 
@@ -104,7 +105,9 @@ const AddProduct = () => {
         category,
         stock: parseInt(trimmedStock),
         imageUrl,
+        username: username,
         createdAt: firestore.FieldValue.serverTimestamp(),
+        
       });
 
       setAlertMessage('Product added successfully!');
