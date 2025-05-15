@@ -169,22 +169,22 @@ const Grains = () => {
             )}
 
             <View style={styles.navBar}>
-                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('HomeScreen')}>
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Home')}>
                     <Image source={require('../assets/Home.png')} style={styles.navImage} />
                     <Text style={styles.navText}>Home</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={[styles.navItem, { backgroundColor: '#E0F7FA' }]}
+                    style={styles.navItem}
                     onPress={() => navigation.navigate('Marketplace')}
                 >
                     <Image source={require('../assets/MarketplaceGreen.png')} style={styles.navImage} />
                     <Text style={styles.navText}>Marketplace</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.navItem}>
-                    <Image source={require('../assets/Orders.png')} style={styles.navImage} />
-                    <Text style={styles.navText}>Orders</Text>
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Notifications')}>
+                    <Image source={require('../assets/Notifications.png')} style={styles.navImage} />
+                    <Text style={styles.navText}>Notifications</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ProfileScreen')}>

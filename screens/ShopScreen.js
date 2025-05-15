@@ -136,6 +136,11 @@ const ShopScreen = () => {
           <Text style={styles.navText}>Marketplace</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Notifications')}>
+            <Image source={require('../assets/Notifications.png')} style={styles.navImage} />
+            <Text style={styles.navText}>Notifications</Text>
+          </TouchableOpacity>
+
         <TouchableOpacity style={styles.navItem}>
           <Image source={require('../assets/ProfileGreen.png')} style={styles.navImage} />
           <Text style={styles.navText}>Profile</Text>

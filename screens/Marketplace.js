@@ -155,14 +155,15 @@ const Marketplace = () => {
                     <Text style={styles.navText}>Home</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                    style={[styles.navItem, { backgroundColor: '#E0F7FA' }]}
-                    onPress={() => navigation.navigate('Marketplace')}
-                >
-                    <Image source={require('../assets/MarketplaceGreen.png')} style={styles.navImage} onPress={() => navigation.navigate('Marketplace')} />
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Marketplace')} >
+                    <Image source={require('../assets/MarketplaceGreen.png')} style={styles.navImage}/>
                     <Text style={styles.navText}>Marketplace</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Notifications')}>
+                    <Image source={require('../assets/Notifications.png')} style={styles.navImage} />
+                    <Text style={styles.navText}>Notifications</Text>
+                </TouchableOpacity>
 
                 <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ProfileScreen')}>
                     <Image source={require('../assets/Profile_picture.png')} style={styles.navImage} />

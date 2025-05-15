@@ -135,6 +135,14 @@ const Settings = ({ navigation }) => {
                 />
                 <Text style={styles.navText}>Marketplace</Text>
               </TouchableOpacity>
+
+               <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Notifications')}>
+                <Image
+                  source={require('../assets/Notifications.png')}
+                  style={styles.navImage}
+                />
+                <Text style={styles.navText}>Notifications</Text>
+              </TouchableOpacity>
       
               <TouchableOpacity style={styles.navItem}>
                 <Image
