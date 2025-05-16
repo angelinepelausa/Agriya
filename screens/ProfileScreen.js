@@ -104,7 +104,7 @@ const ProfileScreen = () => {
               <Text style={styles.navText}>To Pay</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ToShipScreen')}>
+            <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ToShip')}>
               <Image
                 source={require('../assets/Ship.png')}
                 style={styles.navImage}
